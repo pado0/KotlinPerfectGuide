@@ -47,4 +47,7 @@ fun main() {
    val si = 3
    val squares = Array(si){(it+1)*(it+1)} // 중괄호 안은 람다식. 크기가 3인 배열의 크기에 iteration 하면서 자동으로 크기를 증가시키는 it를 사용하여 제곱수를 리턴하는 배열 생성
    println(squares[0])
+
+   //promt3 private라서 호출못함
+   // println(prompt3(2.3));
 }
