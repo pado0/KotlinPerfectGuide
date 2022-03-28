@@ -73,5 +73,53 @@ fun main() {
     val a1= 10
     val a2 = 20
     println( if (a1>a2) a1 else a2 )
-}
 
+    // 범위 진행 연산
+    val chars = 'a'..'h'
+    var chars2 = IntArray(5);
+    chars2[2] = 1
+
+    var num = 3
+
+    // 저 범위에 num이 있니? in은 끝값 포함
+    println(num in 10..99)
+    println(chars2.contentToString());
+
+    // until은 끝값 미포함
+    println(5 in 1 until 10);
+
+    // 아래로 내려감
+    println(5 in 10 downTo 1)
+
+    // 간격 지정 가능
+    //1..12 set 3이면 1 4 7 10...
+    println(15 downTo 9 step 2) //2간격
+
+    //for
+
+    val afor = IntArray(10){it*it}
+    var sum = 0
+
+    for(x in afor){ // 범위 연산자랑 같이 쓸 수 있다.
+        sum += x;
+    }
+    println(sum)
+
+    val forArray = IntArray(10){it}
+    for(i in 0..forArray.lastIndex){
+        println(forArray[i])
+    }
+
+    // 예외 던지기
+    var numE = 0;
+    var s:String = "asdfabsdfa"
+    //if(s.length !in 1..4) throw java.lang.NumberFormatException("범위를 벗어났수다")
+
+    // 예외 처리
+    try {
+        var a12 = readLine()!!.toInt()
+        println(a12) // 실패하면 여기 안거치고 바로 catch로 감
+    }catch (e:java.lang.NumberFormatException){
+        println("넘어감")
+    }
+}
